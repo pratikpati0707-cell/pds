@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional patent drafting, technical drawings and filing assistance.">
+  <title>Northline Patent | Precision for What Comes Next</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f7f7f5;
+      --ink: #161719;
+      --muted: #6e7174;
+      --line: #d9dad8;
+      --steel: #9aa1a6;
+      --accent: #45677b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      align-items: center;
+      background: rgba(255, 255, 255, .68);
+      border: 1px solid rgba(255, 255, 255, .9);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(28, 34, 42, .08), inset 0 1px 0 rgba(255, 255, 255, .9);
+      display: flex;
+      justify-content: space-between;
+      margin: 14px auto;
+      max-width: 1380px;
+      padding: 18px 28px;
+      -webkit-backdrop-filter: blur(18px) saturate(130%);
+      backdrop-filter: blur(18px) saturate(130%);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
+
+    .site-nav {
+      align-items: center;
+      display: flex;
+      gap: 30px;
+    }
+
+    .menu-toggle {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      height: 42px;
+      padding: 9px 0 9px 12px;
+      width: 42px;
+    }
+
+    .menu-toggle span {
+      background: var(--ink);
+      display: block;
+      height: 2px;
+      margin: 5px 0 5px auto;
+      transition: transform .2s ease, opacity .2s ease, width .2s ease;
+      width: 27px;
+    }
+
+    .menu-toggle span:nth-child(2) {
+      width: 19px;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--ink);
+    }
+
+    .nav-consultation {
+      border-bottom: 1px solid var(--ink);
+      color: var(--ink);
+      padding-bottom: 4px;
+    }
+
+    .brand {
+      align-items: center;
+      display: flex;
+      font-size: 13px;
+      font-weight: 800;
+      gap: 10px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      border: 1px solid var(--ink);
+      display: grid;
+      height: 23px;
+      place-items: center;
+      width: 23px;
+    }
+
+    .brand-mark::after {
+      background: var(--ink);
+      content: "";
+      height: 9px;
+      width: 9px;
+    }
+
+    .header-note {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero,
+    .about {
+      margin: 0 auto;
+      max-width: 1440px;
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    .hero {
+      align-items: center;
+      display: grid;
+      gap: 7vw;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr);
+      min-height: 690px;
+      padding-bottom: 116px;
+      padding-top: 90px;
+    }
+
+    .hero-copy,
+    .hero-visual {
+      animation: rise-in .7s ease-out both;
+    }
+
+    .hero-visual {
+      animation-delay: .12s;
+    }
+
+    .eyebrow,
+    .section-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(3.4rem, 6.5vw, 6.5rem);
+      font-weight: 700;
+      letter-spacing: -.065em;
+      line-height: .98;
+      margin: 27px 0 30px;
+      max-width: 720px;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    .actions {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .button {
+      align-items: center;
+      display: inline-flex;
+      font-size: 12px;
+      font-weight: 800;
+      gap: 14px;
+      letter-spacing: .08em;
+      min-height: 50px;
+      text-transform: uppercase;
+    }
+
+    .button-primary {
+      background: var(--ink);
+      color: white;
+      padding: 0 22px;
+    }
+
+    .button-primary::after {
+      content: "↗";
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .button-secondary {
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .button-secondary::after {
+      content: "↓";
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    .schematic {
+      aspect-ratio: 1 / 1;
+      border: 1px solid var(--line);
+      max-width: 500px;
+      position: relative;
+      transform: rotate(3deg);
+    }
+
+    .schematic::before,
+    .schematic::after {
+      content: "";
+      position: absolute;
+    }
+
+    .schematic::before {
+      border: 1px solid var(--steel);
+      height: 62%;
+      left: 19%;
+      top: 17%;
+      width: 62%;
+    }
+
+    .schematic::after {
+      border-left: 1px solid var(--steel);
+      border-top: 1px solid var(--steel);
+      height: 44%;
+      left: 29%;
+      top: 27%;
+      transform: rotate(45deg);
+      width: 44%;
+    }
+
+    .schematic-grid {
+      background-image: linear-gradient(to right, transparent 49.8%, var(--line) 50%, transparent 50.2%), linear-gradient(to bottom, transparent 49.8%, var(--line) 50%, transparent 50.2%);
+      inset: 0;
+      opacity: .7;
+      position: absolute;
+    }
+
+    .schematic-ring {
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      height: 26%;
+      left: 37%;
+      position: absolute;
+      top: 37%;
+      width: 26%;
+    }
+
+    .schematic-ring::after {
+      border: 1px dashed var(--accent);
+      border-radius: 50%;
+      content: "";
+      inset: 13%;
+      position: absolute;
+    }
+
+    .dimension {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .12em;
+      position: absolute;
+    }
+
+    .dimension-top {
+      left: 50%;
+      top: 8%;
+      transform: translateX(-50%);
+    }
+
+    .dimension-side {
+      left: 8%;
+      top: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: left top;
+    }
+
+    .figure-caption {
+      color: var(--muted);
+      display: flex;
+      font-size: 10px;
+      justify-content: space-between;
+      letter-spacing: .08em;
+      margin-top: 18px;
+      text-transform: uppercase;
+    }
+
+    .about {
+      background: #f1f5fa;
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 8vw;
+      grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr);
+      max-width: none;
+      padding-bottom: 150px;
+      padding-left: max(5vw, calc((100vw - 1440px) / 2 + 5vw));
+      padding-right: max(5vw, calc((100vw - 1440px) / 2 + 5vw));
+      padding-top: 115px;
+    }
+
+    .about-visual {
+      min-height: 500px;
+      overflow: hidden;
+      padding: 28px 0 0 7vw;
+      position: relative;
+    }
+
+    .about-visual::before {
+      background: #edf2f4;
+      border-radius: 50%;
+      content: "";
+      height: 510px;
+      left: -76px;
+      position: absolute;
+      top: -72px;
+      width: 510px;
+      z-index: -1;
+    }
+
+    .about-visual::after {
+      background: var(--paper);
+      content: "";
+      height: 28px;
+      left: 0;
+      position: absolute;
+      top: 286px;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .experience-number {
+      animation: experience-reveal .9s cubic-bezier(.22, 1, .36, 1) both;
+      font-size: clamp(7.5rem, 15vw, 13rem);
+      font-weight: 700;
+      letter-spacing: -.12em;
+      line-height: .8;
+    }
+
+    .experience-copy {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .03em;
+      line-height: 1.65;
+      margin: 12px 0 39px 180px;
+      max-width: 245px;
+      text-transform: uppercase;
+    }
+
+    .about-list {
+      list-style: none;
+      margin: 0;
+      max-width: 380px;
+      padding: 0;
+    }
+
+    .about-list li {
+      align-items: center;
+      border-bottom: 1px solid rgba(154, 161, 166, .3);
+      display: flex;
+      font-size: 14px;
+      font-weight: 700;
+      gap: 16px;
+      min-height: 52px;
+    }
+
+    .about-list li::before {
+      color: #5aafdf;
+      content: ">";
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .about-button {
+      background: #7351b4;
+      color: white;
+      margin-top: 34px;
+      padding: 0 28px;
+    }
+
+    .about-content {
+      max-width: 770px;
+      padding-top: 8px;
+    }
+
+    .about-content .section-label {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding-left: 27px;
+      position: relative;
+    }
+
+    .about-content .section-label::before {
+      border-left: 24px solid #eee9f6;
+      border-top: 24px solid transparent;
+      content: "";
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: -4px;
+      width: 0;
+      z-index: -1;
+    }
+
+    h2 {
+      font-size: clamp(2.5rem, 4.2vw, 4.6rem);
+      font-weight: 600;
+      letter-spacing: -.06em;
+      line-height: 1.02;
+      max-width: 720px;
+    }
+
+    .about-copy {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-top: 37px;
+      max-width: 640px;
+    }
+
+    .about-copy + .about-copy {
+      margin-top: 21px;
+    }
+
+    .trust-line {
+      align-items: center;
+      color: var(--ink);
+      display: flex;
+      font-size: 23px;
+      font-weight: 700;
+      gap: 30px;
+      line-height: 1.25;
+      margin-top: 45px;
+      max-width: 590px;
+    }
+
+    .trust-line::before {
+      color: #e8eef1;
+      content: "““";
+      font-family: Georgia, serif;
+      font-size: 76px;
+      letter-spacing: -.22em;
+      line-height: .5;
+    }
+
+    .quote-credit {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0;
+      margin: 15px 0 0 97px;
+      text-transform: none;
+    }
+
+    .services {
+      background: #252d3a;
+      color: #f7f7f5;
+      padding: 120px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 110px;
+    }
+
+    .services-intro {
+      border-bottom: 1px solid #3b4655;
+      padding-bottom: 72px;
+    }
+
+    .services-label {
+      color: #88c9ec;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .services-title {
+      font-size: clamp(2.8rem, 5.2vw, 5.8rem);
+      font-weight: 600;
+      letter-spacing: -.065em;
+      line-height: 1.05;
+      margin-top: 28px;
+      max-width: 950px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card {
+      border-right: 1px solid #3b4655;
+      min-height: 365px;
+      padding: 46px 48px 10px 50px;
+      position: relative;
+    }
+
+    .service-card:first-child {
+      padding-left: 0;
+    }
+
+    .service-card:last-child {
+      border-right: 0;
+    }
+
+    .service-icon {
+      align-items: center;
+      background: #3d9ddd;
+      border-radius: 7px;
+      color: #172230;
+      display: flex;
+      font-size: 31px;
+      font-weight: 800;
+      height: 54px;
+      justify-content: center;
+      width: 54px;
+    }
+
+    .service-card:nth-child(2) .service-icon {
+      background: #28c3b2;
+    }
+
+    .service-card:nth-child(3) .service-icon {
+      background: transparent;
+      border: 2px solid #9b91f5;
+      color: #9b91f5;
+    }
+
+    .service-number {
+      color: #f7f7f5;
+      font-size: 18px;
+      margin-left: 13px;
+    }
+
+    .service-heading {
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: -.035em;
+      margin-top: 45px;
+    }
+
+    .service-link {
+      align-items: center;
+      border-bottom: 1px solid #465365;
+      display: inline-flex;
+      font-size: 13px;
+      font-weight: 700;
+      gap: 14px;
+      margin-top: 29px;
+      padding-bottom: 14px;
+    }
+
+    .service-link::after {
+      color: #74c9f2;
+      content: "›";
+      font-size: 25px;
+      font-weight: 400;
+      line-height: .5;
+    }
+
+    .service-card:nth-child(2) .service-link::after {
+      color: #28c3b2;
+    }
+
+    .service-card:nth-child(3) .service-link::after {
+      color: #9b91f5;
+    }
+
+    .service-description {
+      color: #aeb6c1;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-top: 27px;
+      max-width: 300px;
+    }
+
+    .why-us {
+      background: #f7f7f5;
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 8vw;
+      grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+      padding: 125px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 135px;
+    }
+
+    .why-label {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .why-title {
+      font-size: clamp(2.8rem, 4.8vw, 5.3rem);
+      font-weight: 600;
+      letter-spacing: -.065em;
+      line-height: 1.02;
+      margin-top: 27px;
+      max-width: 560px;
+    }
+
+    .why-intro {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-top: 30px;
+      max-width: 410px;
+    }
+
+    .why-list {
+      border-top: 1px solid var(--line);
+      list-style: none;
+      margin: 7px 0 0;
+      padding: 0;
+    }
+
+    .why-item {
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 42px 1fr;
+      padding: 28px 0 31px;
+    }
+
+    .why-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      padding-top: 4px;
+    }
+
+    .why-item h3 {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      margin: 0;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin-top: 9px;
+      max-width: 610px;
+    }
+
+    .process {
+      background: #eaf0f4;
+      border-top: 1px solid var(--line);
+      padding: 125px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 135px;
+    }
+
+    .process-heading {
+      margin: 0 auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .process-label {
+      color: #7351b4;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .process-title {
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -.065em;
+      line-height: 1.03;
+      margin-top: 25px;
+    }
+
+    .process-subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 24px auto 0;
+      max-width: 530px;
+    }
+
+    .process-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 82px auto 0;
+      max-width: 1240px;
+      position: relative;
+    }
+
+    .process-track::before {
+      background: #cbd5dc;
+      content: "";
+      height: 1px;
+      left: 12.5%;
+      position: absolute;
+      right: 12.5%;
+      top: 31px;
+    }
+
+    .process-step {
+      padding: 0 28px;
+      position: relative;
+      text-align: center;
+    }
+
+    .process-step + .process-step {
+      border-left: 1px solid rgba(154, 161, 166, .35);
+    }
+
+    .process-marker {
+      align-items: center;
+      background: #eaf0f4;
+      border: 1px solid #9daab3;
+      border-radius: 50%;
+      color: #7351b4;
+      display: flex;
+      font-size: 13px;
+      font-weight: 800;
+      height: 63px;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+      width: 63px;
+      z-index: 1;
+    }
+
+    .process-marker::after {
+      border: 1px solid rgba(115, 81, 180, .45);
+      border-radius: 50%;
+      content: "";
+      inset: 6px;
+      position: absolute;
+    }
+
+    .process-step h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -.035em;
+      margin: 29px 0 0;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 14px auto 0;
+      max-width: 230px;
+    }
+
+    .showcase {
+      background: #f5f8fa;
+      border-top: 1px solid var(--line);
+      overflow: hidden;
+      padding: 125px 0 135px;
+    }
+
+    .showcase-heading {
+      margin: 0 auto;
+      max-width: 1040px;
+      padding: 0 5vw;
+    }
+
+    .showcase-label {
+      color: #7351b4;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .showcase-title {
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      font-weight: 600;
+      letter-spacing: -.065em;
+      line-height: 1.03;
+      margin-top: 25px;
+    }
+
+    .showcase-description {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-top: 23px;
+      max-width: 520px;
+    }
+
+    .showcase-window {
+      margin-top: 72px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .showcase-track {
+      animation: showcase-scroll 34s linear infinite;
+      display: flex;
+      gap: 26px;
+      width: max-content;
+    }
+
+    .showcase-window:hover .showcase-track,
+    .showcase-window:focus-within .showcase-track {
+      animation-play-state: paused;
+    }
+
+    .showcase-card {
+      background: white;
+      border-radius: 18px;
+      height: 350px;
+      overflow: hidden;
+      position: relative;
+      width: 320px;
+    }
+
+    .showcase-card:nth-child(2n) {
+      margin-top: 36px;
+    }
+
+    .showcase-card::before,
+    .showcase-card::after {
+      border: 1px solid #87939b;
+      content: "";
+      position: absolute;
+    }
+
+    .showcase-card::before {
+      height: 52%;
+      left: 20%;
+      top: 18%;
+      transform: rotate(-12deg);
+      width: 58%;
+    }
+
+    .showcase-card::after {
+      border-style: dashed;
+      border-radius: 50%;
+      height: 31%;
+      left: 34%;
+      top: 28%;
+      width: 31%;
+    }
+
+    .showcase-card:nth-child(2)::before {
+      border-radius: 50% 50% 10% 10%;
+      height: 47%;
+      left: 18%;
+      top: 21%;
+      transform: skewY(-7deg);
+      width: 64%;
+    }
+
+    .showcase-card:nth-child(2)::after {
+      border-radius: 0;
+      height: 12%;
+      left: 28%;
+      top: 38%;
+      transform: rotate(25deg);
+      width: 44%;
+    }
+
+    .showcase-card:nth-child(3)::before {
+      border-radius: 8px;
+      height: 43%;
+      left: 16%;
+      top: 22%;
+      transform: none;
+      width: 67%;
+    }
+
+    .showcase-card:nth-child(3)::after {
+      border-radius: 0;
+      height: 5%;
+      left: 25%;
+      top: 41%;
+      transform: rotate(-24deg);
+      width: 50%;
+    }
+
+    .showcase-card:nth-child(4)::before {
+      border-radius: 50%;
+      height: 43%;
+      left: 18%;
+      top: 20%;
+      transform: none;
+      width: 64%;
+    }
+
+    .showcase-card:nth-child(4)::after {
+      border-radius: 0;
+      height: 0;
+      left: 25%;
+      top: 42%;
+      transform: rotate(30deg);
+      width: 50%;
+    }
+
+    .showcase-meta {
+      bottom: 25px;
+      left: 27px;
+      position: absolute;
+      right: 27px;
+    }
+
+    .showcase-index {
+      color: #7351b4;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .showcase-name {
+      border-top: 1px solid var(--line);
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 10px;
+      padding-top: 12px;
+    }
+
+    .site-footer {
+      background: #252d3a;
+      color: #f7f7f5;
+    }
+
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    .site-footer .brand-mark {
+      border-color: #f7f7f5;
+    }
+
+    .site-footer .brand-mark::after {
+      background: #f7f7f5;
+    }
+
+    .footer-newsletter {
+      align-items: end;
+      border-bottom: 1px solid #3d4857;
+      display: grid;
+      gap: 50px;
+      grid-template-columns: 1fr minmax(300px, .8fr);
+      padding: 95px max(5vw, calc((100vw - 1440px) / 2 + 5vw));
+    }
+
+    .footer-label {
+      color: #81c6ec;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .footer-newsletter h2 {
+      color: #f7f7f5;
+      font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+      margin-top: 23px;
+      max-width: 650px;
+    }
+
+    .footer-newsletter p {
+      color: #aeb6c1;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-top: 19px;
+      max-width: 520px;
+    }
+
+    .subscribe-form {
+      display: flex;
+      border-bottom: 1px solid #687686;
+      padding-bottom: 11px;
+    }
+
+    .subscribe-form input {
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 14px;
+      min-width: 0;
+      outline: 0;
+      padding: 10px 0;
+    }
+
+    .subscribe-form input::placeholder { color: #aeb6c1; }
+
+    .subscribe-form button {
+      background: transparent;
+      color: #81c6ec;
+      font-size: 22px;
+      min-height: 0;
+      padding: 0 0 0 15px;
+    }
+
+    .footer-main {
+      display: grid;
+      gap: 70px;
+      grid-template-columns: 1.1fr 1fr .7fr;
+      padding: 72px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 85px;
+    }
+
+    .footer-brand-note {
+      color: #aeb6c1;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-top: 24px;
+      max-width: 270px;
+    }
+
+    .footer-heading {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 25px;
+    }
+
+    .footer-detail,
+    .footer-nav a {
+      color: #aeb6c1;
+      display: block;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 8px;
+      text-decoration: none;
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus-visible { color: white; }
+
+    .footer-bottom {
+      align-items: center;
+      border-top: 1px solid #3d4857;
+      color: #8f9aa7;
+      display: flex;
+      font-size: 11px;
+      justify-content: space-between;
+      letter-spacing: .06em;
+      padding: 20px max(5vw, calc((100vw - 1440px) / 2 + 5vw));
+    }
+
+    @keyframes showcase-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 13px)); }
+    }
+
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes experience-reveal {
+      from { opacity: 0; transform: translateY(28px) scale(.94); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width: 760px) {
+      .site-header {
+        border-radius: 15px;
+        margin: 10px 4vw;
+        padding: 15px 18px;
+        top: 10px;
+      }
+      .menu-toggle { display: block; }
+      .site-nav {
+        align-items: stretch;
+        background: rgba(255, 255, 255, .9);
+        border: 1px solid rgba(255, 255, 255, .95);
+        border-radius: 0 0 15px 15px;
+        box-shadow: 0 14px 28px rgba(28, 34, 42, .08);
+        border-top: 1px solid var(--line);
+        flex-direction: column;
+        gap: 0;
+        left: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 5vw;
+        position: absolute;
+        right: 0;
+        top: calc(100% - 1px);
+        transform: translateY(-8px);
+        transition: max-height .25s ease, opacity .2s ease, transform .25s ease;
+        visibility: hidden;
+      }
+      .site-nav.is-open {
+        max-height: 190px;
+        opacity: 1;
+        padding-bottom: 12px;
+        transform: translateY(0);
+        visibility: visible;
+      }
+      .nav-link {
+        border-bottom: 1px solid var(--line);
+        font-size: 11px;
+        padding: 17px 0;
+      }
+      .nav-consultation { display: block; }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        min-height: 0;
+        padding-bottom: 86px;
+        padding-top: 64px;
+      }
+      h1 { font-size: clamp(3.15rem, 15vw, 5rem); margin-top: 22px; }
+      .hero-description { font-size: 15px; }
+      .actions { align-items: flex-start; flex-direction: column; gap: 20px; margin-top: 34px; }
+      .schematic { width: min(100%, 420px); }
+      .about {
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+        padding-bottom: 100px;
+        padding-top: 76px;
+      }
+      .about-visual { min-height: 470px; padding-left: 11vw; }
+      .about-visual::before { height: 440px; left: -100px; top: -42px; width: 440px; }
+      .about-visual::after { top: 259px; }
+      .experience-copy { margin-left: 145px; }
+      h2 { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .about-copy { font-size: 15px; margin-top: 28px; }
+      .trust-line { font-size: 19px; gap: 18px; }
+      .quote-credit { margin-left: 68px; }
+      .services { padding: 78px 5vw 76px; }
+      .services-intro { padding-bottom: 50px; }
+      .services-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .services-grid { display: block; }
+      .service-card,
+      .service-card:first-child {
+        border-bottom: 1px solid #3b4655;
+        border-right: 0;
+        min-height: 0;
+        padding: 42px 0 48px;
+      }
+      .service-card:last-child { border-bottom: 0; padding-bottom: 0; }
+      .service-heading { margin-top: 30px; }
+      .why-us {
+        display: block;
+        padding: 80px 5vw 88px;
+      }
+      .why-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .why-intro { margin-top: 25px; }
+      .why-list { margin-top: 55px; }
+      .why-item { gap: 18px; grid-template-columns: 32px 1fr; }
+      .why-item h3 { font-size: 19px; }
+      .process { padding: 80px 5vw 90px; }
+      .process-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .process-track {
+        display: block;
+        margin-top: 56px;
+      }
+      .process-track::before {
+        bottom: 32px;
+        height: auto;
+        left: 31px;
+        right: auto;
+        top: 31px;
+        width: 1px;
+      }
+      .process-step,
+      .process-step + .process-step {
+        border-left: 0;
+        display: grid;
+        grid-template-columns: 63px 1fr;
+        padding: 0 0 42px;
+        text-align: left;
+      }
+      .process-step:last-child { padding-bottom: 0; }
+      .process-marker { grid-row: span 2; }
+      .process-step h3 { margin: 8px 0 0 24px; }
+      .process-step p { margin: 7px 0 0 24px; max-width: none; }
+      .showcase { padding: 80px 0 90px; }
+      .showcase-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .showcase-window { margin-top: 50px; }
+      .showcase-track { animation-duration: 28s; gap: 16px; }
+      .showcase-card { height: 295px; width: min(76vw, 300px); }
+      .showcase-card:nth-child(2n) { margin-top: 22px; }
+      .footer-newsletter { display: block; padding: 75px 5vw 62px; }
+      .footer-newsletter h2 { font-size: clamp(2.6rem, 12vw, 4rem); }
+      .subscribe-form { margin-top: 42px; }
+      .footer-main { display: block; padding: 58px 5vw 65px; }
+      .footer-column + .footer-column { margin-top: 48px; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 9px; padding: 20px 5vw; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .hero-copy, .hero-visual, .experience-number, .site-nav, .menu-toggle span, .showcase-track { animation: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Northline Patent home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Northline Patent</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-link" href="#top">Home</a>
+      <a class="nav-link" href="#about">About Us</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#why-us">Why Us</a>
+      <a class="nav-link" href="#how-we-work">Process</a>
+      <a class="nav-link" href="#showcase">Showcase</a>
+      <a class="nav-link" href="admin.html">Admin</a>
+      <a class="nav-link nav-consultation" href="mailto:hello@northlinepatent.com">Consultation</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Patent &amp; Intellectual Property Services</p>
+        <h1 id="hero-title">Protect Your Innovation.<br>Build Its Future.</h1>
+        <p class="hero-description">Professional patent drafting, technical drawings and filing assistance designed to help innovators protect their ideas with clarity and precision.</p>
+        <div class="actions">
+          <a class="button button-primary" href="mailto:hello@northlinepatent.com">Book a Consultation</a>
+          <a class="button button-secondary" href="#services">Explore Our Services</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Abstract technical patent schematic" role="img">
+        <div class="schematic">
+          <div class="schematic-grid"></div>
+          <div class="schematic-ring"></div>
+          <span class="dimension dimension-top">FIG. 01 / 03</span>
+          <span class="dimension dimension-side">PRECISION / 001</span>
+        </div>
+        <div class="figure-caption"><span>Technical reference</span><span>NL—2026</span></div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-visual" aria-label="15 years of patent experience">
+        <span class="experience-number">15+</span>
+        <span class="experience-copy">Years<br>Experience in<br>Patent Drafting &amp; Illustrations</span>
+        <ul class="about-list">
+          <li>Innovation Strategy Development</li>
+          <li>Patent Drafting</li>
+          <li>Patent Illustrations</li>
+        </ul>
+        <a class="button about-button" href="mailto:hello@northlinepatent.com">Explore More</a>
+      </div>
+      <div class="about-content">
+        <p class="section-label">About Us</p>
+        <h2 id="about-title">Turning Ideas Into Protected Innovation.</h2>
+        <p class="about-copy">We help inventors, startups and businesses navigate the patent process with professional technical documentation and filing support. From understanding an invention to preparing precise patent documentation and drawings, our approach focuses on clarity, accuracy and confidentiality.</p>
+        <p class="about-copy">Our goal is simple — to make the patent process easier to understand and professionally handled, so innovators can focus on building what comes next.</p>
+        <p class="trust-line">Precision is a kind of protection. We make sure to preserve it.</p>
+        <span class="quote-credit">Northline Patent<br>Patent Drafting &amp; Illustration Experts</span>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services-intro">
+        <p class="services-label">Our Services</p>
+        <h2 class="services-title" id="services-title">We handle the most important details with precision.</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div><span class="service-icon" aria-hidden="true">↗</span><span class="service-number">01</span></div>
+          <h3 class="service-heading">Patent Drafting</h3>
+          <a class="service-link" href="mailto:hello@northlinepatent.com">Explore Service</a>
+          <p class="service-description">Clear, compliant patent specifications prepared around the technical details that make your invention distinct.</p>
+        </article>
+        <article class="service-card">
+          <div><span class="service-icon" aria-hidden="true">✕</span><span class="service-number">02</span></div>
+          <h3 class="service-heading">Patent Drawings</h3>
+          <a class="service-link" href="mailto:hello@northlinepatent.com">Explore Service</a>
+          <p class="service-description">Precise technical illustrations that communicate your invention clearly across every stage of review.</p>
+        </article>
+        <article class="service-card">
+          <div><span class="service-icon" aria-hidden="true">◌</span><span class="service-number">03</span></div>
+          <h3 class="service-heading">Patent Filing</h3>
+          <a class="service-link" href="mailto:hello@northlinepatent.com">Explore Service</a>
+          <p class="service-description">Organized filing assistance that helps move your application forward with confidence and care.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why-us" id="why-us" aria-labelledby="why-title">
+      <div>
+        <p class="why-label">Why Choose Us</p>
+        <h2 class="why-title" id="why-title">Precision you can build on.</h2>
+        <p class="why-intro">Strong patent work begins with a clear understanding of the invention. We combine technical fluency with a careful, transparent process at every stage.</p>
+      </div>
+      <ol class="why-list">
+        <li class="why-item">
+          <span class="why-number">01</span>
+          <div><h3>Technical precision</h3><p>We translate complex ideas into accurate, structured documentation that makes the invention easy to understand and protect.</p></div>
+        </li>
+        <li class="why-item">
+          <span class="why-number">02</span>
+          <div><h3>Confidential by design</h3><p>Your ideas are handled with discretion, care and a process built around trust from the first conversation.</p></div>
+        </li>
+        <li class="why-item">
+          <span class="why-number">03</span>
+          <div><h3>Clear communication</h3><p>We keep each stage understandable, so you always know what is being prepared, why it matters and what comes next.</p></div>
+        </li>
+        <li class="why-item">
+          <span class="why-number">04</span>
+          <div><h3>Complete support</h3><p>From drafting and drawings to filing assistance, our work stays coordinated around the needs of your innovation.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="process" id="how-we-work" aria-labelledby="process-title">
+      <div class="process-heading">
+        <p class="process-label">How We Work</p>
+        <h2 class="process-title" id="process-title">A clear path from idea to filing.</h2>
+        <p class="process-subtitle">Every project moves through a focused process designed to keep the work precise, collaborative and easy to follow.</p>
+      </div>
+      <div class="process-track">
+        <article class="process-step">
+          <span class="process-marker">01</span>
+          <h3>Understand</h3>
+          <p>We listen, ask the right questions and map the technical heart of your invention.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-marker">02</span>
+          <h3>Shape</h3>
+          <p>We turn your ideas into a clear strategy for claims, documentation and drawings.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-marker">03</span>
+          <h3>Refine</h3>
+          <p>We review the details with you and refine every element until it communicates accurately.</p>
+        </article>
+        <article class="process-step">
+          <span class="process-marker">04</span>
+          <h3>Move Forward</h3>
+          <p>We prepare the final deliverables and support the next step toward protecting your work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase" id="showcase" aria-labelledby="showcase-title">
+      <div class="showcase-heading">
+        <p class="showcase-label">Sample Showcase</p>
+        <h2 class="showcase-title" id="showcase-title">Technical detail, clearly illustrated.</h2>
+        <p class="showcase-description">A glimpse at the structured, precise visual language we bring to every patent drawing.</p>
+      </div>
+      <div class="showcase-window" aria-label="Moving sample patent drawings" tabindex="0">
+        <div class="showcase-track">
+          <article class="showcase-card"><div class="showcase-meta"><span class="showcase-index">FIG. 01 / 04</span><h3 class="showcase-name">Mechanical Assembly</h3></div></article>
+          <article class="showcase-card"><div class="showcase-meta"><span class="showcase-index">FIG. 02 / 04</span><h3 class="showcase-name">Structural Detail</h3></div></article>
+          <article class="showcase-card"><div class="showcase-meta"><span class="showcase-index">FIG. 03 / 04</span><h3 class="showcase-name">Device Interface</h3></div></article>
+          <article class="showcase-card"><div class="showcase-meta"><span class="showcase-index">FIG. 04 / 04</span><h3 class="showcase-name">System Overview</h3></div></article>
+          <article class="showcase-card" aria-hidden="true"><div class="showcase-meta"><span class="showcase-index">FIG. 01 / 04</span><h3 class="showcase-name">Mechanical Assembly</h3></div></article>
+          <article class="showcase-card" aria-hidden="true"><div class="showcase-meta"><span class="showcase-index">FIG. 02 / 04</span><h3 class="showcase-name">Structural Detail</h3></div></article>
+          <article class="showcase-card" aria-hidden="true"><div class="showcase-meta"><span class="showcase-index">FIG. 03 / 04</span><h3 class="showcase-name">Device Interface</h3></div></article>
+          <article class="showcase-card" aria-hidden="true"><div class="showcase-meta"><span class="showcase-index">FIG. 04 / 04</span><h3 class="showcase-name">System Overview</h3></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <section class="footer-newsletter" aria-labelledby="newsletter-title">
+      <div>
+        <p class="footer-label">Stay Informed</p>
+        <h2 id="newsletter-title">Ideas worth protecting deserve attention.</h2>
+        <p>Get occasional insights on patent documentation, drawings and the work behind stronger applications.</p>
+      </div>
+      <form class="subscribe-form" id="subscribe-form">
+        <label class="visually-hidden" for="email">Email address</label>
+        <input id="email" type="email" placeholder="Your email address" required>
+        <button type="submit" aria-label="Subscribe">↗</button>
+      </form>
+    </section>
+    <div class="footer-main">
+      <div class="footer-column">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span>Northline Patent</span></a>
+        <p class="footer-brand-note">Professional patent drafting, technical drawings and filing assistance for ideas with a future.</p>
+      </div>
+      <div class="footer-column">
+        <h3 class="footer-heading">Get in touch</h3>
+        <span class="footer-detail">hello@northlinepatent.com</span>
+        <span class="footer-detail">Mon - Fri / 09:00 - 18:00</span>
+        <a class="footer-detail" href="mailto:hello@northlinepatent.com">Book a consultation ↗</a>
+      </div>
+      <nav class="footer-column footer-nav" aria-label="Footer navigation">
+        <h3 class="footer-heading">Explore</h3>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#how-we-work">How We Work</a>
+        <a href="#showcase">Showcase</a>
+      </nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Northline Patent</span><span>Clarity · Accuracy · Confidentiality</span></div>
+  </footer>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+      siteNav.classList.toggle('is-open', !isOpen);
+    });
+
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        siteNav.classList.remove('is-open');
+      });
+    });
+
+    const savedShowcase = localStorage.getItem('northlinePatentShowcase');
+    if (savedShowcase) {
+      const visibleItems = JSON.parse(savedShowcase).filter((item) => item.visible !== false);
+      const showcaseTrack = document.querySelector('.showcase-track');
+      const showcaseCards = visibleItems.map((item, index) => `<article class="showcase-card"><div class="showcase-meta"><span class="showcase-index">FIG. ${String(index + 1).padStart(2, '0')} / ${String(visibleItems.length).padStart(2, '0')}</span><h3 class="showcase-name">${escapeShowcaseText(item.title)}</h3></div></article>`);
+      showcaseTrack.innerHTML = [...showcaseCards, ...showcaseCards.map((card) => card.replace('<article', '<article aria-hidden="true"'))].join('');
+    }
+
+    function escapeShowcaseText(value) {
+      return String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
+    }
+
+    document.querySelector('#subscribe-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.currentTarget.querySelector('button').textContent = '✓';
+      event.currentTarget.querySelector('input').value = '';
+      event.currentTarget.querySelector('input').placeholder = 'You are on the list';
+    });
+  </script>
+</body>
+</html>
