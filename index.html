@@ -514,12 +514,12 @@
     .services {
       background: #252d3a;
       color: #f7f7f5;
-      padding: 120px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 110px;
+      padding: 88px max(5vw, calc((100vw - 1440px) / 2 + 5vw)) 82px;
     }
 
     .services-intro {
       border-bottom: 1px solid #3b4655;
-      padding-bottom: 72px;
+      padding-bottom: 52px;
     }
 
     .services-label {
@@ -546,8 +546,8 @@
 
     .service-card {
       border-right: 1px solid #3b4655;
-      min-height: 365px;
-      padding: 46px 48px 10px 50px;
+      min-height: 300px;
+      padding: 34px 42px 8px 44px;
       position: relative;
     }
 
@@ -592,7 +592,7 @@
       font-size: 23px;
       font-weight: 600;
       letter-spacing: -.035em;
-      margin-top: 45px;
+      margin-top: 32px;
     }
 
     .service-link {
@@ -626,7 +626,7 @@
       color: #aeb6c1;
       font-size: 15px;
       line-height: 1.85;
-      margin-top: 27px;
+      margin-top: 20px;
       max-width: 300px;
     }
 
@@ -1185,19 +1185,24 @@
       .about-copy { font-size: 15px; margin-top: 28px; }
       .trust-line { font-size: 19px; gap: 18px; }
       .quote-credit { margin-left: 68px; }
-      .services { padding: 78px 5vw 76px; }
-      .services-intro { padding-bottom: 50px; }
+      .services { padding: 58px 5vw 62px; }
+      .services-intro { padding-bottom: 35px; }
       .services-title { font-size: clamp(2.6rem, 12vw, 4rem); }
-      .services-grid { display: block; }
+      .services-grid { display: grid; gap: 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .service-card,
       .service-card:first-child {
-        border-bottom: 1px solid #3b4655;
-        border-right: 0;
+        border-bottom: 0;
+        border-right: 1px solid #3b4655;
         min-height: 0;
-        padding: 42px 0 48px;
+        padding: 18px 7px 7px;
       }
-      .service-card:last-child { border-bottom: 0; padding-bottom: 0; }
-      .service-heading { margin-top: 30px; }
+      .service-card:last-child { border-right: 0; padding-bottom: 10px; }
+      .service-icon { border-radius: 5px; font-size: 20px; height: 36px; width: 36px; }
+      .service-number { font-size: 11px; margin-left: 4px; }
+      .service-heading { font-size: 13px; line-height: 1.25; margin-top: 19px; }
+      .service-link { font-size: 9px; gap: 3px; margin-top: 14px; padding-bottom: 6px; }
+      .service-link::after { font-size: 18px; }
+      .service-description { font-size: 10px; line-height: 1.45; margin-top: 11px; }
       .why-us {
         display: block;
         padding: 80px 5vw 88px;
