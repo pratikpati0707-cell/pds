@@ -16,6 +16,7 @@
       --line: #d9dad8;
       --steel: #9aa1a6;
       --accent: #45677b;
+      --warm-accent: #c47b6a;
     }
 
     * {
@@ -276,8 +277,8 @@
 
     .hero {
       align-items: center;
-      background: #121525;
-      color: #f7f7f5;
+      background: #edf3f6;
+      color: var(--ink);
       display: grid;
       gap: 7vw;
       grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr);
@@ -289,11 +290,11 @@
     }
 
     .hero::before {
-      background: #20256d;
+      background: #dce9ef;
       clip-path: polygon(100% 0, 100% 38%, 0 100%, 0 67%);
       content: "";
       height: 70%;
-      opacity: .68;
+      opacity: .82;
       position: absolute;
       right: 0;
       top: 14%;
@@ -328,7 +329,7 @@
     }
 
     h1 {
-      color: #f7f7f5;
+      color: var(--ink);
       font-size: clamp(3.4rem, 6.5vw, 6.5rem);
       font-weight: 700;
       letter-spacing: -.065em;
@@ -338,7 +339,7 @@
     }
 
     .hero-description {
-      color: #b8bbc5;
+      color: var(--muted);
       font-size: 16px;
       line-height: 1.75;
       max-width: 520px;
@@ -364,7 +365,7 @@
     }
 
     .button-primary {
-      background: #ff5a27;
+      background: #252d3a;
       color: white;
       padding: 0 22px;
     }
@@ -376,8 +377,8 @@
     }
 
     .button-secondary {
-      border-bottom: 1px solid #f7f7f5;
-      color: #f7f7f5;
+      border-bottom: 1px solid var(--ink);
+      color: var(--ink);
     }
 
     .button-secondary::after {
@@ -388,14 +389,24 @@
 
     .schematic {
       aspect-ratio: 1 / 1;
-      border: 1px solid #6d7590;
+      border: 1px solid var(--line);
       max-width: 500px;
       position: relative;
       transform: rotate(3deg);
     }
 
     h1 .accent-word {
-      color: #ff5a27;
+      color: var(--warm-accent);
+      display: inline-block;
+      min-width: 5.7em;
+    }
+
+    .accent-word.is-changing {
+      animation: accent-change .35s ease;
+    }
+
+    @keyframes accent-change {
+      50% { filter: blur(5px); opacity: .35; transform: translateY(-3px); }
     }
 
     .schematic::before,
@@ -405,7 +416,7 @@
     }
 
     .schematic::before {
-      border: 1px solid #bbc2d2;
+      border: 1px solid var(--steel);
       height: 62%;
       left: 19%;
       top: 17%;
@@ -413,8 +424,8 @@
     }
 
     .schematic::after {
-      border-left: 1px solid #bbc2d2;
-      border-top: 1px solid #bbc2d2;
+      border-left: 1px solid var(--steel);
+      border-top: 1px solid var(--steel);
       height: 44%;
       left: 29%;
       top: 27%;
@@ -423,7 +434,7 @@
     }
 
     .schematic-grid {
-      background-image: linear-gradient(to right, transparent 49.8%, #566078 50%, transparent 50.2%), linear-gradient(to bottom, transparent 49.8%, #566078 50%, transparent 50.2%);
+      background-image: linear-gradient(to right, transparent 49.8%, var(--line) 50%, transparent 50.2%), linear-gradient(to bottom, transparent 49.8%, var(--line) 50%, transparent 50.2%);
       inset: 0;
       opacity: .7;
       position: absolute;
@@ -448,7 +459,7 @@
     }
 
     .dimension {
-      color: #bbc2d2;
+      color: var(--muted);
       font-size: 9px;
       letter-spacing: .12em;
       position: absolute;
@@ -1297,8 +1308,8 @@
       }
       .nav-consultation { display: block; }
       .hero {
-        background: #121525;
-        color: #f7f7f5;
+        background: #edf3f6;
+        color: var(--ink);
         display: flex;
         flex-direction: column;
         gap: 52px;
@@ -1309,11 +1320,11 @@
         position: relative;
       }
       .hero::before {
-        background: #20256d;
+        background: #dce9ef;
         clip-path: polygon(100% 0, 100% 34%, 0 100%, 0 68%);
         content: "";
         height: 62%;
-        opacity: .7;
+        opacity: .82;
         position: absolute;
         right: 0;
         top: 18%;
@@ -1322,17 +1333,17 @@
       .hero-copy,
       .hero-visual { position: relative; z-index: 1; }
       .eyebrow { color: #b7c9ff; }
-      h1 { color: #f7f7f5; font-size: clamp(3.15rem, 15vw, 5rem); margin-top: 22px; }
-      h1 .accent-word { color: #ff5a27; display: block; }
-      .hero-description { color: #b8bbc5; font-size: 15px; }
+      h1 { color: var(--ink); font-size: clamp(3.15rem, 15vw, 5rem); margin-top: 22px; }
+      h1 .accent-word { color: var(--warm-accent); display: block; }
+      .hero-description { color: var(--muted); font-size: 15px; }
       .actions { align-items: flex-start; flex-direction: column; gap: 20px; margin-top: 34px; }
-      .button-primary { background: #ff5a27; }
-      .button-secondary { border-color: #f7f7f5; color: #f7f7f5; }
-      .schematic { border-color: #6d7590; width: min(100%, 420px); }
-      .schematic::before { border-color: #bbc2d2; }
-      .schematic::after { border-color: #bbc2d2; }
-      .schematic-grid { background-image: linear-gradient(to right, transparent 49.8%, #566078 50%, transparent 50.2%), linear-gradient(to bottom, transparent 49.8%, #566078 50%, transparent 50.2%); }
-      .dimension { color: #bbc2d2; }
+      .button-primary { background: #252d3a; }
+      .button-secondary { border-color: var(--ink); color: var(--ink); }
+      .schematic { border-color: var(--line); width: min(100%, 420px); }
+      .schematic::before { border-color: var(--steel); }
+      .schematic::after { border-color: var(--steel); }
+      .schematic-grid { background-image: linear-gradient(to right, transparent 49.8%, var(--line) 50%, transparent 50.2%), linear-gradient(to bottom, transparent 49.8%, var(--line) 50%, transparent 50.2%); }
+      .dimension { color: var(--muted); }
       .about {
         display: flex;
         flex-direction: column;
@@ -1460,7 +1471,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">Patent &amp; Intellectual Property Services</p>
-        <h1 id="hero-title">Protect Your <span class="accent-word">Innovation.</span> Build Its Future.</h1>
+        <h1 id="hero-title">Protect Your <span class="accent-word" id="rotating-word">Innovation.</span> Build Its Future.</h1>
         <p class="hero-description">Professional patent drafting, technical drawings and filing assistance designed to help innovators protect their ideas with clarity and precision.</p>
         <div class="actions">
           <a class="button button-primary" href="mailto:hello@northlinepatent.com">Book a Consultation</a>
@@ -1667,6 +1678,17 @@
     function escapeShowcaseText(value) {
       return String(value).replace(/[&<>'"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[char]));
     }
+
+    const rotatingWord = document.querySelector('#rotating-word');
+    const accentWords = ['Innovation.', 'Technology.'];
+    let accentWordIndex = 0;
+    window.setInterval(() => {
+      accentWordIndex = (accentWordIndex + 1) % accentWords.length;
+      rotatingWord.classList.remove('is-changing');
+      void rotatingWord.offsetWidth;
+      rotatingWord.textContent = accentWords[accentWordIndex];
+      rotatingWord.classList.add('is-changing');
+    }, 2000);
 
     document.body.classList.add('splash-active');
     window.setTimeout(() => {
